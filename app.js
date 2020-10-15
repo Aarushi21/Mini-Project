@@ -9,6 +9,7 @@ const list = document.querySelector(".todos"); //reference to ul
 const generateTemplate = (todo) => {
   const html = `
    <li class="list-group-item d-flex justify-content-between align-items-center">
+                <input type="checkbox" class="done"/>
                 <span>${todo}</span>
                 <i class="fa fa-trash-o delete"></i>
     </li>
@@ -38,6 +39,10 @@ list.addEventListener("click", (e) => {
   //  if (e.target.tagName === "I")
   if (e.target.classList.contains("delete")) {
     e.target.parentElement.remove();
+  }
+  if(e.target.classList.contains("done"))
+  {
+    e.target.parentElement.style.background="rgb(0, 255, 106)";
   }
 });
 
